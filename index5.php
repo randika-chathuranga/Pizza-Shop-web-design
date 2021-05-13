@@ -1,4 +1,44 @@
 <?php 
+/*
+    if(isset($_GET['submit'])){
+        echo $_GET['email'];
+        echo $_GET['title'];
+        echo $_GET['ingredients'];
+    }
+*/
+
+/*
+    if(isset($_POST['submit'])){
+        echo htmlspecialchars($_POST['email']);
+        echo htmlspecialchars($_POST['title']);
+        echo htmlspecialchars($_POST['ingredients']);
+    }
+*/
+
+    if(isset($_POST['submit'])){
+        if(empty($_POST['email'])){
+            echo 'A email is required';
+        }
+        else{
+            echo htmlspecialchars($_POST['email']); 
+        }
+
+        if(empty($_POST['title'])){
+            echo 'A title is required';
+        }
+        else{
+            echo htmlspecialchars($_POST['title']); 
+        }
+
+        if(empty($_POST['ingredients'])){
+            echo 'A ingredients is required';
+        }
+        else{
+            echo htmlspecialchars($_POST['ingredients']); 
+        }
+    }
+
+    
 
 ?>
 
@@ -8,7 +48,7 @@
     
         <section class="container grey-text">
             <h4 class="white">Add Pizza</h4>
-            <form class="white" action="" method="">
+            <form class="white" action="index5.php" method="POST">
                 <label for="">Your email:</label>
                 <input type="text" name="email">
 
